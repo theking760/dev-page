@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 6% 4%;
+    --foreground: 240 5% 89%;
+    --card: 240 6% 8%;
+    --card-foreground: 240 5% 89%;
+    --popover: 240 6% 8%;
+    --popover-foreground: 240 5% 89%;
+    --primary: 18 100% 50%;
+    --primary-foreground: 240 6% 4%;
+    --secondary: 240 6% 12%;
+    --secondary-foreground: 240 5% 89%;
+    --muted: 240 6% 12%;
+    --muted-foreground: 240 5% 46%;
+    --accent: 18 100% 50%;
+    --accent-foreground: 240 6% 4%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 240 5% 89%;
+    --border: 240 6% 15%;
+    --input: 240 6% 15%;
+    --ring: 18 100% 50%;
+    --chart-1: 18 100% 50%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.25rem;
+    --font-heading: 'Inter', ui-sans-serif, system-ui, sans-serif;
+    --font-body: 'Inter', ui-sans-serif, system-ui, sans-serif;
+    --font-display: 'JetBrains Mono', ui-monospace, monospace;
+    --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --sidebar-background: 240 6% 4%;
+    --sidebar-foreground: 240 5% 89%;
+    --sidebar-primary: 18 100% 50%;
+    --sidebar-primary-foreground: 240 6% 4%;
+    --sidebar-accent: 240 6% 8%;
+    --sidebar-accent-foreground: 240 5% 89%;
+    --sidebar-border: 240 6% 12%;
+    --sidebar-ring: 18 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .text-glow {
+    text-shadow: 0 0 12px hsl(var(--primary) / 0.4);
+  }
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: hsl(240 6% 20%);
+    border-radius: 2px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--primary));
+  }
+  @keyframes ascii-scroll {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-50%); }
+  }
+  .animate-ascii-scroll {
+    animation: ascii-scroll 40s linear infinite;
+  }
+}
